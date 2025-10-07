@@ -3,15 +3,18 @@ public abstract class Flight {
     private String destination;
     private String departureTime;
     private int boardingDoor;
-    private String airline;
-    private int baseCost;
+    protected Airline airline;
+    protected double baseCost;
+    private Aircraft aircraft;
 
-    public Flight(int flyId, String destination, String departureTime, int boardingDoor, int baseCost) {
+    public Flight(int flyId, String destination, String departureTime, int boardingDoor, Airline airline, int baseCost, Aircraft aircraft) {
         this.flightId = flyId;
         this.destination = destination;
         this.departureTime = departureTime;
         this.boardingDoor = boardingDoor;
+        this.airline = airline;
         this.baseCost = baseCost;
+        this.aircraft = aircraft;
     }
 
     public int getFlightId() {return flightId;}
@@ -22,5 +25,9 @@ public abstract class Flight {
 
     public int getBoardingDoor() {return boardingDoor;}
 
-    public String getAirline() {return airline;}
+    public Airline getAirline() {return airline;}
+
+    public Aircraft getAircraft() {return aircraft;}
+
+    public abstract double getCost();
 }

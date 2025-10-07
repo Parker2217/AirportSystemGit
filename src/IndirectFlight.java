@@ -4,9 +4,10 @@ public class IndirectFlight extends Flight{
 
     private ArrayList<Airport> airports;
     private ArrayList<Passenger> passengers;
+    private double refuelFee;
 
-    public IndirectFlight(int flyId, String destination, String departureTime, int boardingDoor, int baseCost) {
-        super(flyId, destination, departureTime, boardingDoor, baseCost);
+    public IndirectFlight(int flyId, String destination, String departureTime, int boardingDoor, Airline airline, int baseCost, Aircraft aircraft) {
+        super(flyId, destination, departureTime, boardingDoor, airline, baseCost, aircraft);
         airports = new ArrayList<>();
         passengers = new ArrayList<>();
     }
@@ -19,5 +20,10 @@ public class IndirectFlight extends Flight{
     public void addPassenger(String name, String email, int id){
         Passenger passenger = new Passenger(name, email, id);
         passengers.add(passenger);
+    }
+
+    @Override
+    public double getCost() {
+        return baseCost + (baseCost * airline.getFee()) + refuelFee;
     }
 }
