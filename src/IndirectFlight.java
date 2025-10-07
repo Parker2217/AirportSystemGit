@@ -10,4 +10,14 @@ public class IndirectFlight extends Flight{
         airports = new ArrayList<>();
         passengers = new ArrayList<>();
     }
+
+    public void addAirport(String country, String city, int tax){
+        Airport airport = new Airport(country, city, tax);
+        airports.add(airport);
+    }
+
+    public void addPassenger(String name, String email, int id){
+        Passenger passenger = new Passenger(name, email, id);
+        passengers.add(passenger);
+    }
 }
