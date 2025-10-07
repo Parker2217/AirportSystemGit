@@ -8,4 +8,10 @@ public class Passenger {
         this.email = email;
         this.id = id;
     }
+
+    public String getName() {return name;}
+
+    public String getEmail() {return email;}
+
+    public int getId() {return id;}
 }
