@@ -8,4 +8,10 @@ public class Airport {
         this.city = city;
         this.tax = tax;
     }
+
+    public String getCountry() {return country;}
+
+    public String getCity() {return city;}
+
+    public int getTax() {return tax;}
 }
