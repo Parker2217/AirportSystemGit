@@ -1,4 +1,4 @@
-public class Flight {
+public abstract class Flight {
     private int flightId;
     private String destination;
     private String departureTime;
