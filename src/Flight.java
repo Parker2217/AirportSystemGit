@@ -13,4 +13,14 @@ public abstract class Flight {
         this.boardingDoor = boardingDoor;
         this.baseCost = baseCost;
     }
+
+    public int getFlightId() {return flightId;}
+
+    public String getDestination() {return destination;}
+
+    public String getDepartureTime() {return departureTime;}
+
+    public int getBoardingDoor() {return boardingDoor;}
+
+    public String getAirline() {return airline;}
 }
