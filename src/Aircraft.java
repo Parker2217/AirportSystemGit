@@ -8,4 +8,10 @@ public class Aircraft {
         this.model = model;
         this.capacity = capacity;
     }
+
+    public String getManufacturer() {return manufacturer;}
+
+    public String getModel() {return model;}
+
+    public int getCapacity() {return capacity;}
 }
