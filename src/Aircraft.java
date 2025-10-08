@@ -1,17 +1,29 @@
 public class Aircraft {
-    private String manufacturer;
-    private String model;
-    private int capacity;
+    private String registrationID;
+    private AircraftModel model;
+    private Airline airline;
 
-    public Aircraft(String manufacturer, String model, int capacity) {
-        this.manufacturer = manufacturer;
+    public Aircraft(String registrationID, AircraftModel model, Airline airline) {
+        this.registrationID = registrationID;
         this.model = model;
-        this.capacity = capacity;
+        this.airline = airline;
     }
 
-    public String getManufacturer() {return manufacturer;}
+    public String getRegistrationID() {return registrationID;}
 
-    public String getModel() {return model;}
+    public AircraftModel getModel() {return model;}
 
-    public int getCapacity() {return capacity;}
+    public Airline getAirline() {return airline;}
+
+    public EManufacturer getManufacturer() {
+        return model.getManufacturer();
+    }
+
+    public String getModelName() {
+        return model.getModel();
+    }
+
+    public int getCapacity() {
+        return model.getCapacity();
+    }
 }
