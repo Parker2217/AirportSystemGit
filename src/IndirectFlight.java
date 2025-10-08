@@ -14,7 +14,7 @@ public class IndirectFlight extends Flight{
         this.boardingAtLayover = boardingAtLayover;
     }
 
-    public void addAirport(Airport airport) {
+    public void addLayoverAirport(Airport airport) {
         layoverAirports.add(airport);
     }
 

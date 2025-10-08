@@ -7,6 +7,10 @@ public class Airline {
         this.profitRate = profitRate;
     }
 
+    public String getName() {return name;}
+
+    public float getProfitRate() {return profitRate;}
+
     public void setName(String name) {
         this.name = name;
     }
@@ -14,8 +18,4 @@ public class Airline {
     public void setProfitRate(float profitRate) {
         this.profitRate = profitRate;
     }
-
-    public String getName() {return name;}
-
-    public float getProfitRate() {return profitRate;}
 }

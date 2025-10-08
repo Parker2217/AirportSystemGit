@@ -10,7 +10,7 @@ public abstract class Flight {
     private float totalCost;
     private Aircraft aircraft;
 
-    public Flight(int flightId, Airport destination, LocalDateTime departureTime, int boardingGate, Airline airline, float baseCost, Aircraft aircraft) {
+    protected Flight(int flightId, Airport destination, LocalDateTime departureTime, int boardingGate, Airline airline, float baseCost, Aircraft aircraft) {
         this.flightId = flightId;
         this.destination = destination;
         this.departureTime = departureTime;

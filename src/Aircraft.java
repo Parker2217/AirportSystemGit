@@ -1,6 +1,6 @@
 public class Aircraft {
-    private String registrationID;
-    private AircraftModel model;
+    private final String registrationID;
+    private final AircraftModel model;
     private Airline airline;
 
     public Aircraft(String registrationID, AircraftModel model, Airline airline) {
@@ -15,15 +15,5 @@ public class Aircraft {
 
     public Airline getAirline() {return airline;}
 
-    public EManufacturer getManufacturer() {
-        return model.getManufacturer();
-    }
-
-    public String getModelName() {
-        return model.getModel();
-    }
-
-    public int getCapacity() {
-        return model.getCapacity();
-    }
+    public void setAirline(Airline airline) {this.airline = airline;}
 }

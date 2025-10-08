@@ -1,8 +1,8 @@
 public class AircraftModel {
 
-    private EManufacturer manufacturer;
-    private String model;
-    private int capacity;
+    private final EManufacturer manufacturer;
+    private final String model;
+    private final int capacity;
 
     public AircraftModel(EManufacturer manufacturer, String model, int capacity) {
         this.manufacturer = manufacturer;
