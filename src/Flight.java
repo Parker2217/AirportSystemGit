@@ -1,17 +1,20 @@
+import java.time.*;
+
 public abstract class Flight {
-    private int flightId;
-    private String destination;
-    private String departureTime;
-    private int boardingDoor;
-    protected Airline airline;
-    protected double baseCost;
+    private final int flightId;
+    private final Airport destination;
+    private LocalDateTime departureTime;
+    private int boardingGate;
+    private final Airline airline;
+    private float baseCost;
+    private float totalCost;
     private Aircraft aircraft;
 
-    public Flight(int flyId, String destination, String departureTime, int boardingDoor, Airline airline, int baseCost, Aircraft aircraft) {
-        this.flightId = flyId;
+    public Flight(int flightId, Airport destination, LocalDateTime departureTime, int boardingGate, Airline airline, float baseCost, Aircraft aircraft) {
+        this.flightId = flightId;
         this.destination = destination;
         this.departureTime = departureTime;
-        this.boardingDoor = boardingDoor;
+        this.boardingGate = boardingGate;
         this.airline = airline;
         this.baseCost = baseCost;
         this.aircraft = aircraft;
@@ -19,15 +22,37 @@ public abstract class Flight {
 
     public int getFlightId() {return flightId;}
 
-    public String getDestination() {return destination;}
+    public Airport getDestination() {return destination;}
 
-    public String getDepartureTime() {return departureTime;}
+    public LocalDateTime getDepartureTime() {return departureTime;}
 
-    public int getBoardingDoor() {return boardingDoor;}
+    public int getBoardingGate() {return boardingGate;}
 
     public Airline getAirline() {return airline;}
 
     public Aircraft getAircraft() {return aircraft;}
 
-    public abstract double getCost();
+    public float getBaseCost() {return baseCost;}
+
+    public float getTotalCost() {return totalCost;}
+
+    public void delayFlight(LocalDateTime departureTime) {
+        this.departureTime = departureTime;
+    }
+
+    public void changeBoardingGate(int boardingGate) {
+        this.boardingGate = boardingGate;
+    }
+
+    public void changeBaseCost(float baseCost) {
+        this.baseCost = baseCost;
+    }
+
+    public void changeAircraft(Aircraft aircraft) {
+        this.aircraft = aircraft;
+    }
+
+    protected void setTotalCost(float totalCost) {this.totalCost = totalCost;}
+
+    protected abstract void updateCost();
 }

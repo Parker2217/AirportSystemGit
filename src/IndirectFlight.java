@@ -1,29 +1,31 @@
+import java.time.*;
 import java.util.ArrayList;
 
 public class IndirectFlight extends Flight{
 
-    private ArrayList<Airport> airports;
-    private ArrayList<Passenger> passengers;
-    private double refuelFee;
+    private final ArrayList<Airport> layoverAirports;
+    private float refuelingFee;
+    private final boolean boardingAtLayover;
 
-    public IndirectFlight(int flyId, String destination, String departureTime, int boardingDoor, Airline airline, int baseCost, Aircraft aircraft) {
-        super(flyId, destination, departureTime, boardingDoor, airline, baseCost, aircraft);
-        airports = new ArrayList<>();
-        passengers = new ArrayList<>();
+    public IndirectFlight(int flightId, Airport destination, ArrayList<Airport> layoverAirports, LocalDateTime departureTime, int boardingGate, Airline airline, int baseCost, Aircraft aircraft, float refuelingFee, boolean boardingAtLayover) {
+        super(flightId, destination, departureTime, boardingGate, airline, baseCost, aircraft);
+        this.layoverAirports = layoverAirports;
+        this.refuelingFee = refuelingFee;
+        this.boardingAtLayover = boardingAtLayover;
     }
 
-    public void addAirport(String country, String city, int tax){
-        Airport airport = new Airport(country, city, tax);
-        airports.add(airport);
+    public void addAirport(Airport airport) {
+        layoverAirports.add(airport);
     }
 
-    public void addPassenger(String name, String email, int id){
-        Passenger passenger = new Passenger(name, email, id);
-        passengers.add(passenger);
+    public void setRefuelingFee(float refuelingFee) {
+        this.refuelingFee = refuelingFee;
     }
+
+    public boolean isBoardingAtLayover() {return boardingAtLayover;}
 
     @Override
-    public double getCost() {
-        return baseCost + (baseCost * airline.getFee()) + refuelFee;
+    public void updateCost() {
+        this.setTotalCost(this.getBaseCost() + (this.getBaseCost() * this.getAirline().getFee()) + refuelingFee);
     }
 }

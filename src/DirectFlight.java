@@ -1,13 +1,13 @@
-import java.util.ArrayList;
+import java.time.*;
 
 public class DirectFlight extends Flight{
 
-    public DirectFlight(int flyId, String destination, String departureTime, int boardingDoor, Airline airline, int baseCost, Aircraft aircraft) {
-        super(flyId, destination, departureTime, boardingDoor, airline, baseCost, aircraft);
+    public DirectFlight(int flightId, Airport destination, LocalDateTime departureTime, int boardingGate, Airline airline, int baseCost, Aircraft aircraft) {
+        super(flightId, destination, departureTime, boardingGate, airline, baseCost, aircraft);
     }
 
     @Override
-    public double getCost() {
-        return baseCost + (baseCost * airline.getFee());
+    public void updateCost() {
+        this.setTotalCost(this.getBaseCost() + (this.getBaseCost() * this.getAirline().getFee()));
     }
 }
