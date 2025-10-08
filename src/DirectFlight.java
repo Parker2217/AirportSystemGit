@@ -8,6 +8,6 @@ public class DirectFlight extends Flight{
 
     @Override
     public void updateCost() {
-        this.setTotalCost(this.getBaseCost() + (this.getBaseCost() * this.getAirline().getFee()));
+        this.setTotalCost(this.getBaseCost() + (this.getBaseCost() * this.getAirline().getProfitRate()));
     }
 }
