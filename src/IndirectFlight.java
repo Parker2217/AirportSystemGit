@@ -26,6 +26,6 @@ public class IndirectFlight extends Flight{
 
     @Override
     public void updateCost() {
-        this.setTotalCost(this.getBaseCost() + (this.getBaseCost() * this.getAirline().getFee()) + refuelingFee);
+        this.setTotalCost(this.getBaseCost() + (this.getBaseCost() * this.getAirline().getProfitRate()) + refuelingFee);
     }
 }

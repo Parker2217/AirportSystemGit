@@ -1,13 +1,21 @@
 public class Airline {
     private String name;
-    private float fee;
+    private float profitRate;
 
-    public Airline(String name, float fee) {
+    public Airline(String name, float profitRate) {
         this.name = name;
-        this.fee = fee;
+        this.profitRate = profitRate;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setProfitRate(float profitRate) {
+        this.profitRate = profitRate;
     }
 
     public String getName() {return name;}
 
-    public float getFee() {return fee;}
+    public float getProfitRate() {return profitRate;}
 }

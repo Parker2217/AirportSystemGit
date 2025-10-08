@@ -36,19 +36,19 @@ public abstract class Flight {
 
     public float getTotalCost() {return totalCost;}
 
-    public void delayFlight(LocalDateTime departureTime) {
+    public void setFlightTime(LocalDateTime departureTime) {
         this.departureTime = departureTime;
     }
 
-    public void changeBoardingGate(int boardingGate) {
+    public void setBoardingGate(int boardingGate) {
         this.boardingGate = boardingGate;
     }
 
-    public void changeBaseCost(float baseCost) {
+    public void setBaseCost(float baseCost) {
         this.baseCost = baseCost;
     }
 
-    public void changeAircraft(Aircraft aircraft) {
+    public void setAircraft(Aircraft aircraft) {
         this.aircraft = aircraft;
     }
 

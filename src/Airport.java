@@ -1,17 +1,14 @@
 public class Airport {
-    private String country;
-    private String city;
-    private int tax;
+    private String name;
 
-    public Airport(String country, String city, int tax) {
-        this.country = country;
-        this.city = city;
-        this.tax = tax;
+    public Airport(String name) {
+        this.name = name;
     }
 
-    public String getCountry() {return country;}
-
-    public String getCity() {return city;}
-
-    public int getTax() {return tax;}
+    public String setName() {
+        return this.name;
+    }
+    public String getName() {
+        return this.name;
+    }
 }
